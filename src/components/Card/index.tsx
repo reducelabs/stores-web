@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, Title, SubTitleContainer, CardContent, Category, Image, Header } from './styles';
 import { BsDot } from 'react-icons/bs';
-import { GrDeliver } from 'react-icons/gr';
-import { IconContext } from 'react-icons';
 
 
 interface CardProps {
@@ -20,11 +18,6 @@ const Card: React.FC<CardProps> = (props) => {
           <Category>
             Eletrônicos
           </Category>
-          <IconContext.Provider value={{ color: 'red' }}>
-            <div>
-              <GrDeliver />
-            </div>
-          </IconContext.Provider>
         </Header>
         <Title>
           { props.title }

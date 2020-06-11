@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from '../../components/Card';
+import MapStores from '../../components/MapStores';
+import { Container } from './styles';
 
 const ListStores: React.FC = () => {
   const store = {
@@ -8,17 +10,10 @@ const ListStores: React.FC = () => {
     delivery: false
   }
   return (
-    <>
+    <Container>
       <Card title={store.title} image_url={store.image_url} delivery={store.delivery} />
-      {/* <Card>
-        <Image src={img} alt={}/>
-        <CardContent>
-          <Title>
-            Americanas
-          </Title>
-        </CardContent>
-      </Card> */}
-    </>
+      <MapStores />
+    </Container>
   );
 };
 
