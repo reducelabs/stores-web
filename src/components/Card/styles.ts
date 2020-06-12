@@ -3,18 +3,21 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   border-radius: 2px;
-  min-width: 100px;
-  min-height: 30px;
-  width: 500px;
-  height: 150px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   margin: 0.2rem;
   padding: 1rem;
+  min-height: 150px;
+  width: 100%;
 
   &:hover {
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    padding: 0.35rem;
   }
 `;
 
@@ -24,14 +27,18 @@ export const Header = styled.div`
 `;
 
 export const Category = styled.p`
-  color: lightslategray;
-  font-size: 14px;
+  color: lightgrey;
 `;
 
 export const Image = styled.img`
   border-radius: 3px;
   width: 120px;
   height: 100%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 15vh;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -44,7 +51,11 @@ export const CardContent = styled.div`
 export const Title = styled.h2`
   margin: 1px;
   font-weight: 500;
-  font-size: 28px;
+
+  @media (max-width: 767px) {
+    margin: 0;
+    font-weight: 400;
+  }
 `;
 
 export const SubTitleContainer = styled.div`
@@ -52,6 +63,10 @@ export const SubTitleContainer = styled.div`
   align-items: center;
   margin: 1px;
   font-weight: 500;
-  font-size: 16px;
   color: grey;
+
+  @media (max-width: 767px) {
+    margin: 0;
+    font-weight: 400;
+  }
 `;

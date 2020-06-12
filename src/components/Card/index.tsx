@@ -1,35 +1,42 @@
 import React from 'react';
-import { Container, Title, SubTitleContainer, CardContent, Category, Image, Header } from './styles';
+import {
+  Container,
+  Title,
+  SubTitleContainer,
+  CardContent,
+  Category,
+  Image,
+  Header,
+} from './styles';
 import { BsDot } from 'react-icons/bs';
 
-
 interface CardProps {
-  title: string;
+  name: string;
   image_url?: string;
-  delivery: boolean;
+  category: string;
+  city: string;
+  uf: string;
 }
 
 const Card: React.FC<CardProps> = (props) => {
   return (
     <Container>
-      <Image src={ props.image_url } alt={ props.title } />
+      <Image src={'https://via.placeholder.com/300'} alt={props.name} />
       <CardContent>
         <Header>
-          <Category>
-            Eletrônicos
-          </Category>
+          <Category>{props.category}</Category>
         </Header>
-        <Title>
-          { props.title }
-        </Title>
+        <Title>{props.name}</Title>
         <SubTitleContainer>
           <p>1.4 km</p>
           <BsDot />
-          <p>Taguating - DF</p>
+          <p>
+            {props.city} - {props.uf}
+          </p>
         </SubTitleContainer>
       </CardContent>
     </Container>
   );
-}
+};
 
 export default Card;
