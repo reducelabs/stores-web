@@ -109,16 +109,20 @@ ${formData.message}
             <Input type='text' id='cep' name='cep' placeholder='000000-000' />
           </Field>
           <Field>
-            <Label htmlFor='location'>Cidade/Estado (UF)</Label>
-            <Input type='text' id='location' name='location' />
+            <Label htmlFor='uf'>Estado (UF)</Label>
+            <Input type='text' id='uf' name='uf' />
+          </Field>
+          <Field>
+            <Label htmlFor='city'>Cidade</Label>
+            <Input type='text' id='city' name='city' />
           </Field>
           <Field>
             <Label htmlFor='neighborhood'>Bairro</Label>
             <Input type='text' id='neighborhood' name='neighborhood' />
           </Field>
           <Field>
-            <Label htmlFor='address'>Endereço</Label>
-            <Input type='text' id='address' name='address' />
+            <Label htmlFor='pubicplace'>Endereço</Label>
+            <Input type='text' id='pubicplace' name='pubicplace' />
           </Field>
           <Field>
             <Label htmlFor='number'>Número</Label>
