@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100vh;
+
+  @media (max-width: 767px) {
+    height: 100%;
+  }
 `;
 
 export const Header = styled.header`
@@ -18,6 +21,16 @@ export const Logo = styled.div`
   font-size: 32px;
   font-weight: 700;
   margin: 10px 58px;
+  @media (min-width: 320px) and (max-width: 480px) {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 38px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 42px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -26,6 +39,22 @@ export const Title = styled.h1`
   font-size: 54px;
   line-height: 64px;
   margin-bottom: 24px;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 14px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 34px;
+    line-height: 48px;
+    margin-bottom: 18px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 34px;
+    line-height: 48px;
+    margin-bottom: 18px;
+  }
 `;
 
 export const TitleHighlight = styled.span`
@@ -35,14 +64,67 @@ export const TitleHighlight = styled.span`
 export const SubTitle = styled.p`
   font-size: 24px;
   line-height: 38px;
+  color: grey;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 20px;
+    line-height: 36px;
+  }
 `;
 
 export const Content = styled.main`
-  width: 672px;
-  margin: 200px 250px;
+  display: flex;
+  height: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+`;
+
+export const IllustrationImage = styled.img`
+  width: 480px;
+  margin: 0 120px;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 250px;
+    margin: 30px 120px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 320px;
+    margin: 40px 0 30px 0;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 300px;
+    margin: 0 52px;
+  }
+`;
+
+export const Information = styled.div`
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  align-items: center;
+  margin-left: 120px;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    margin: 30px 40px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    margin: 30px 62px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-left: 62px;
+  }
 `;
 
 export const LinkRegister = styled(Link)`
