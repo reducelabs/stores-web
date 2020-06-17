@@ -10,7 +10,7 @@ function App() {
   return (
     <ThemeProvider theme={light}>
       <GlobalStyle />
-      {/* <Header /> */}
+      <Header />
       <Routes />
     </ThemeProvider>
   );

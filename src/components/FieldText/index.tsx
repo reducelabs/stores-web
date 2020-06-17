@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Field, Label, Input } from './styles';
 
 interface FieldTextProps {
@@ -9,7 +9,7 @@ interface FieldTextProps {
   placeholder?: string;
   required?: boolean;
   value?: string;
-  onChange?: () => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FieldText: React.FC<FieldTextProps> = (props) => {

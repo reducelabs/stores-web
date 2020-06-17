@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { Container, Title, SubTitle } from './styles';
 
 interface FormProps {
   title?: string;
   subTitle?: string;
-  onSubmit?: () => void;
+  onSubmit?: (event: FormEvent<Element>) => void | Promise<void>;
 }
 
 const Form: React.FC<FormProps> = (props) => {

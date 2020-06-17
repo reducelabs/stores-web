@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.fieldset`
   min-inline-size: auto;
   border: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Legend = styled.legend`
