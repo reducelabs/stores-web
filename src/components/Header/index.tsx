@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, Logo } from './styles';
 
 const Header: React.FC = () => {
   return (
     <Container>
-      Peek
+      <Logo>Peek</Logo>
     </Container>
   );
-}
+};
 
 export default Header;

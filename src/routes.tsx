@@ -11,7 +11,7 @@ const Routes = () => {
     <BrowserRouter>
       <Route component={Home} path='/' exact />
       <Route component={ListStores} path='/stores' />
-      <Route component={CreateStore} path='/create-store' />
+      <Route component={CreateStore} path='/cadastrar-loja' />
       <Route component={DetailStore} path='/store' />
     </BrowserRouter>
   );

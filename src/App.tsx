@@ -11,9 +11,7 @@ function App() {
     <ThemeProvider theme={light}>
       <GlobalStyle />
       {/* <Header /> */}
-      <main>
-        <Routes />
-      </main>
+      <Routes />
     </ThemeProvider>
   );
 }

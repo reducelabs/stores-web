@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   Container,
-  Header,
-  Logo,
   Title,
   SubTitle,
   Content,
@@ -16,13 +14,12 @@ import {
 import { IconContext } from 'react-icons';
 import { FaSignInAlt } from 'react-icons/fa';
 import Illustration from '../../assets/illustration-3.svg';
+import Header from '../../components/Header';
 
 const Home = () => {
   return (
     <Container>
-      <Header>
-        <Logo>Peek</Logo>
-      </Header>
+      <Header />
       <Content>
         <IllustrationImage src={Illustration} alt='Ilustração' />
         <Information>
@@ -35,7 +32,7 @@ const Home = () => {
             tão fácil, amplie o seu negócio com a localizando da loja e
             exposição dos produtos.
           </SubTitle>
-          <LinkRegister to='loja/cadastrar'>
+          <LinkRegister to='/cadastrar-loja'>
             <IconContext.Provider
               value={{
                 color: 'white',
