@@ -8,6 +8,7 @@ interface FieldTextProps {
   type?: string;
   placeholder?: string;
   required?: boolean;
+  disabled?: boolean;
   value?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -23,6 +24,7 @@ const FieldText: React.FC<FieldTextProps> = (props) => {
         value={props?.value}
         placeholder={props?.placeholder}
         required={props?.required}
+        disabled={props?.disabled}
         onChange={props?.onChange}
       />
     </Field>

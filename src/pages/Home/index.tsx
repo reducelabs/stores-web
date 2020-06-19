@@ -14,12 +14,10 @@ import {
 import { IconContext } from 'react-icons';
 import { FaSignInAlt } from 'react-icons/fa';
 import Illustration from '../../assets/illustration-3.svg';
-import Header from '../../components/Header';
 
 const Home = () => {
   return (
     <Container>
-      <Header />
       <Content>
         <IllustrationImage src={Illustration} alt='Ilustração' />
         <Information>

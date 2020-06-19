@@ -5,6 +5,7 @@ export const Container = styled.fieldset`
   border: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const Legend = styled.legend`
