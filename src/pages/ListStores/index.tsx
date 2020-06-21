@@ -15,7 +15,7 @@ import {
 const ListStores: React.FC = () => {
   const [stores, setStores] = useState<IStore[]>([]);
   useEffect(() => {
-    api.get<IStore[]>('stores').then((response) => setStores(response.data));
+    api.get<IStore[]>('/stores').then((response) => setStores(response.data));
   }, []);
   const store = {
     title: 'Americanas',
@@ -25,96 +25,22 @@ const ListStores: React.FC = () => {
   };
   return (
     <Container>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={store.image_url} />
-        <CardContent>
-          <Header>
-            <Category>Categoria</Category>
-            <Title>Americanas</Title>
-          </Header>
-          <Location>Taguatinga - DF</Location>
-        </CardContent>
-      </Card>
+      {stores.map((store) => (
+        <Card key={store.id}>
+          <Image src={store.image_url} />
+          <CardContent>
+            <Header>
+              <Category>Categoria</Category>
+              <Title>{store.name}</Title>
+            </Header>
+            {store.city && store.uf && (
+              <Location>
+                {store.city} - {store.uf}
+              </Location>
+            )}
+          </CardContent>
+        </Card>
+      ))}
     </Container>
   );
 };
