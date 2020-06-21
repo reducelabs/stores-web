@@ -1,5 +1,4 @@
 import React, { FormEvent, useState, ChangeEvent, useEffect } from 'react';
-import Header from '../../components/Header';
 import { Container, TermsText } from './styles';
 import FieldText from '../../components/FieldText';
 import Form from '../../components/Form';
@@ -7,6 +6,7 @@ import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
 import api from '../../services/api';
 import Progress from '../../components/Progress';
+import FieldSelect from '../../components/FieldSelect';
 
 const CreateStore = () => {
   const [step, setStep] = useState<number>(0);
@@ -44,10 +44,6 @@ const CreateStore = () => {
 
   function progressValue(): number {
     return ((step + 1) / 4) * 100;
-  }
-
-  function handleDisabledStep(): boolean {
-    return false;
   }
 
   async function handleSubmit(event: FormEvent) {
@@ -104,7 +100,11 @@ const CreateStore = () => {
               por telefone, e-mail ou WhatsApp (incluindo mensagens automáticas
               para fins comerciais).
             </TermsText>
-            <Button type='button' onClick={handleStepChange} disabled={true}>
+            <Button
+              type='button'
+              onClick={handleStepChange}
+              disabled={!(formData.name && formData.email && formData.phone)}
+            >
               Continuar
             </Button>
           </>
@@ -139,12 +139,16 @@ const CreateStore = () => {
                 onChange={handleInputChangeStore}
               />
             </Fieldset>
-            <Button type='button' onClick={handleStepChange}>
+            <Button
+              type='button'
+              onClick={handleStepChange}
+              disabled={!(storeFormData.name && storeFormData.companyName)}
+            >
               Continuar
             </Button>
           </>
         )}
-        {step === 2 && (
+        {step === 3 && (
           <>
             <Fieldset title='Dados do acesso'>
               <FieldText
