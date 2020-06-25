@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   display: flex;
-  height: 10vh;
+  height: 6vh;
 `;
 
 export const Logo = styled.div`
